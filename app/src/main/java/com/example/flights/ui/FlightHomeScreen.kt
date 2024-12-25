@@ -34,6 +34,7 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.flights.AppViewModelProvider
 import com.example.flights.R
 import com.example.flights.data.airport
 import com.example.flights.ui.theme.FlightsTheme
@@ -42,7 +43,7 @@ import com.example.flights.ui.theme.FlightsTheme
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
-    viewModel: FlightViewModel = viewModel()
+    viewModel: FlightViewModel = viewModel(factory = AppViewModelProvider.factory)
 ){
     Scaffold (
         topBar = {
